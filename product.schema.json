@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "title": "Coolblue Product Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "productId": {
+      "type": "int"
+    },
+    "productName": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "reviews": {
+      "reviewCount": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "reviewAverage": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 5
+      }
+    },
+    "USPs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "pros": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "cons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "availabilityState": {
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "salesPrice": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "listPrice": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "productImageIds": {
+      "type": "array",
+      "items": {
+        "type": "int"
+      }
+    },
+    "deliveredWith": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "productId",
+    "productName",
+    "availabilityState",
+    "salesPrice"
+  ]
+}
